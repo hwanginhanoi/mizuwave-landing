@@ -1,0 +1,32 @@
+---
+import Header from '@/components/Header.tsx';
+import Hero from '@/components/Hero.tsx';
+import Features from '@/components/Features.tsx';
+import Technology from '@/components/Technology.tsx';
+import Testimonials from '@/components/Testimonials.tsx';
+import Footer from '@/components/Footer.tsx';
+import '@/styles/globals.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Mizuwave helps innovative companies design, build, and ship products that users love. Custom software development, UI/UX design, and enterprise solutions." />
+		<title>Mizuwave - Software Development That Users Love</title>
+	</head>
+	<body>
+		<Header client:load />
+		<main>
+			<Hero client:load />
+			<div id="features">
+				<Features client:load />
+			</div>
+			<Technology client:load />
+			<Testimonials client:load />
+		</main>
+		<Footer client:load />
+	</body>
+</html>
