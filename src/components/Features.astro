@@ -1,0 +1,78 @@
+---
+// Features component converted to Astro
+const features = [
+  {
+    name: "Custom Software Development",
+    description: "Tailored solutions built with cutting-edge technologies that perfectly fit your business needs.",
+    icon: "code"
+  },
+  {
+    name: "UI/UX Design",
+    description: "Beautiful, intuitive interfaces that users love, backed by research and best practices.",
+    icon: "palette"
+  },
+  {
+    name: "Performance Optimization",
+    description: "Lightning-fast applications with optimized performance and seamless user experiences.",
+    icon: "zap"
+  },
+  {
+    name: "Team Augmentation",
+    description: "Expert developers who integrate seamlessly with your existing team and processes.",
+    icon: "users"
+  },
+  {
+    name: "Enterprise Solutions",
+    description: "Scalable, secure solutions designed for enterprise-level requirements and compliance.",
+    icon: "shield"
+  },
+  {
+    name: "Product Strategy",
+    description: "From ideation to launch, we help you build products that achieve business goals.",
+    icon: "rocket"
+  }
+];
+
+function getIconSvg(iconName: string) {
+  const icons = {
+    code: '<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />',
+    palette: '<path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />',
+    zap: '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />',
+    users: '<path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />',
+    shield: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />',
+    rocket: '<path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />'
+  };
+  return icons[iconName as keyof typeof icons] || icons.code;
+}
+---
+
+<section class="py-24 sm:py-32 bg-background">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-primary">Our Services</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        End-to-end software solutions
+      </p>
+      <p class="mt-6 text-lg leading-8 text-muted-foreground">
+        We've helped some of the world's coolest companies design, build, and ship products that users love.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+        {features.map((feature) => (
+          <div class="flex flex-col">
+            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
+              <svg class="h-5 w-5 flex-none text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <Fragment set:html={getIconSvg(feature.icon)} />
+              </svg>
+              {feature.name}
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
+              <p class="flex-auto">{feature.description}</p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>

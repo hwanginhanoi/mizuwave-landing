@@ -1,10 +1,10 @@
 ---
-import Header from '@/components/Header.tsx';
-import Hero from '@/components/Hero.tsx';
-import Features from '@/components/Features.tsx';
-import Technology from '@/components/Technology.tsx';
-import Testimonials from '@/components/Testimonials.tsx';
-import Footer from '@/components/Footer.tsx';
+import Header from '@/components/Header.astro';
+import Hero from '@/components/Hero.astro';
+import Features from '@/components/Features.astro';
+import Technology from '@/components/Technology.astro';
+import Testimonials from '@/components/Testimonials.astro';
+import Footer from '@/components/Footer.astro';
 import '@/styles/globals.css';
 ---
 
@@ -18,15 +18,15 @@ import '@/styles/globals.css';
 		<title>Mizuwave - Software Development That Users Love</title>
 	</head>
 	<body>
-		<Header client:load />
+		<Header />
 		<main>
-			<Hero client:load />
+			<Hero />
 			<div id="features">
-				<Features client:load />
+				<Features />
 			</div>
-			<Technology client:load />
-			<Testimonials client:load />
+			<Technology />
+			<Testimonials />
 		</main>
-		<Footer client:load />
+		<Footer />
 	</body>
 </html>
